@@ -1,0 +1,35 @@
+{
+  "name": "TruffleDog",
+  "version": "1.0.0",
+  "description": "News finder",
+  "main": "cd public/index.php",
+  "author": "Andrea Pievaioli",
+  "license": "MIT",
+  "dependencies": {
+    "@google/markerclusterer": "^1.0.3",
+    "@icon/linearicons": "^1.0.1-alpha.2",
+    "bootstrap-3-typeahead": "^4.0.2",
+    "bootstrap-sass": "^3.4.0",
+    "daterangepicker": "^3.0.3",
+    "gulp-bootstrap": "^2.0.3",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-jquery": "^1.1.2",
+    "gulp-resolve-dependencies": "^2.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglifycss": "^1.1.0",
+    "jquery": "^3.3.1",
+    "moment": "^2.23.0",
+    "select2": "^4.0.6-rc.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}

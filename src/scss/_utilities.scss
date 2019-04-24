@@ -1,0 +1,305 @@
+// $LAYOUT ------------------------------------------------------------------ //
+
+// Margin and Padding Classes ----------------------------------------------- //
+
+@each $value in $measure {
+  .u-m--#{$value} {
+    margin: calc-measure($value);
+  }
+
+  .u-mt--#{$value} {
+    margin-top: calc-measure($value);
+  }
+
+  .u-mr--#{$value} {
+    margin-right: calc-measure($value);
+  }
+
+  .u-mb--#{$value} {
+    margin-bottom: calc-measure($value);
+  }
+
+  .u-ml--#{$value} {
+    margin-left: calc-measure($value);
+  }
+
+  .u-p--#{$value} {
+    padding: calc-measure($value);
+  }
+
+  .u-pt--#{$value} {
+    padding-top: calc-measure($value);
+  }
+
+  .u-pr--#{$value} {
+    padding-right: calc-measure($value);
+  }
+
+  .u-pb--#{$value} {
+    padding-bottom: calc-measure($value);
+  }
+
+  .u-pl--#{$value} {
+    padding-left: calc-measure($value);
+  }
+}
+
+// Text align Classes ------------------------------------------------------- //
+
+.u-align--center {
+  text-align: center;
+}
+
+.u-align--left {
+  text-align: left;
+}
+
+.u-align--right {
+  text-align: right;
+}
+
+//[WIP]
+// Font style Classes ------------------------------------------------------- //
+
+.u-fs--italic {
+  font-style: italic;
+}
+
+.u-fs--bold {
+  font-style: bold;
+}
+
+
+//[WIP]
+// Float Classes ------------------------------------------------------------ //
+
+.u-float--left {
+  float: left;
+}
+
+.u-float--right {
+  float: right;
+}
+
+//[WIP]
+// Border width and style Classes ------------------------------------------- //
+
+.u-bd {
+  border: 1px solid;
+}
+
+.u-bd--top {
+  border-top: 1px solid;
+}
+
+.u-bd--right {
+  border-right: 1px solid;
+}
+
+.u-bd--bottom {
+  border-bottom: 1px solid;
+}
+
+.u-bd--left {
+  border-left: 1px solid;
+}
+
+.u-pointer{
+  cursor: pointer;
+}
+
+.u-shadow{
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+// Text align
+//
+.u-align-center {
+  text-align: center;
+}
+
+.u-align-right {
+  text-align: right;
+}
+
+.u-align-left {
+  text-align: left;
+}
+
+.u-align-start {
+  align-self: start
+}
+
+// Float align
+//
+.u-float-left {
+  float: left;
+}
+
+.u-float-right {
+  float: right;
+}
+
+// Border none
+//
+.u-border-none {
+  border: 0 none;
+}
+
+// Flexbox
+//
+
+.u-fb {
+  display: flex;
+
+  &--dir-row {
+    flex-direction: row;
+  }
+
+  &--dir-column {
+    flex-direction: column;
+  }
+
+  &--jc-center {
+    justify-content: center;
+  }
+
+  &--as-center {
+    align-self: center;
+  }
+
+  &--jc-between {
+    justify-content:space-between;
+  }
+
+  &--jc-center {
+    justify-content:center;
+  }
+
+  &--wrap {
+    flex-wrap:wrap;
+  }
+
+  &--n-wrap {
+    flex-wrap:nowrap;
+  }
+
+  &--dir-reverse {
+    flex-direction:row-reverse;
+  }
+
+  &--start {
+    justify-content:flex-start;
+  }
+
+  &--jc-end {
+    justify-content:flex-end;
+  }
+
+  &--ai-center {
+    align-items:center;
+  }
+}
+
+// Lists ---------------------------------------------------------------------//
+
+.u-nobullet {
+  list-style: none;
+}
+
+// Margins -------------------------------------------------------------------//
+
+.u-reset {
+  margin: 0;
+  padding: 0;
+}
+
+.u-expand {
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+}
+
+// Image ---------------------------------------------------------------------//
+
+.u-img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.u-display-none {
+  display: none;
+}
+
+.u-overflow {
+  &--hidden {
+    overflow: hidden;
+  }
+  &--auto {
+    overflow: auto;
+  }
+  &--scroll {
+    overflow: scroll;
+  }
+}
+
+// General colors ---------------------------------------------------------- //
+
+@each $color in $colors {
+  
+  .u-bg-#{$color}{
+    background-color: $color;
+  }
+  .u-color-#{$color}{
+    color: $color;
+  }
+  .u-border-#{$color}{
+    border-color: $color;
+  }
+}
+
+// Grey scale colors ------------------------------------------------------- //
+
+@each $color in $grey-scale {
+  
+  .u-bg-#{$color}{
+    background-color: $color;
+  }
+  .u-color-#{$color}{
+    color: $color;
+  }
+  .u-border-#{$color}{
+    border-color: $color;
+  }
+}
+
+// Social colors ----------------------------------------------------------- //
+
+@each $color in $social-colors {
+  
+  .u-bg-#{$color}{
+    background-color: $color;
+  }
+  .u-color-#{$color}{
+    color: $color;
+  }
+  .u-border-#{$color}{
+    border-color: $color;
+  }
+}
+
+// Alert colors ----------------------------------------------------------- //
+
+@each $color in $alert-colors {
+  
+  .u-bg-#{$color}{
+    background-color: $color;
+  }
+  .u-color-#{$color}{
+    color: $color;
+  }
+  .u-border-#{$color}{
+    border-color: $color;
+  }
+}

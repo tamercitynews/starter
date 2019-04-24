@@ -1,0 +1,6 @@
+// $ANIMATIONS --------------------------------------------------------------//
+//
+@keyframes blink {
+  0%   { opacity: 0; transition: all .25s $transition-function }
+  100% { opacity: 1; transition: all .25s $transition-function }
+}

@@ -1,0 +1,192 @@
+// scss-lint:disable PropertySortOrder VendorPrefix
+// $MAPS -------------------------------------------------------------------- //
+
+// Theme Colors Name
+//
+$colors : (
+  'White':	#FFFFFF,
+  'Black':	#000000,
+  'Red':	#FF0000,
+  'Brown':	#A52A2A,
+  'Orange':	#FFA500,
+  'Yellow':	#FFFF00,
+  'Olive':	#808000,
+  'Lime':	#00FF00,
+  'Green':	#008000,
+  'Aqua':	#00FFFF,
+  'Teal':	#008080,
+  'Blue':	#0000FF,
+  'Navy':	#000080,
+  'Fuchsia':	#FF00FF,
+  'Purple':	#800080
+);
+
+$grey-scale :(
+  "Grey3":	#080808,
+  "Grey7":	#121212,
+  "Grey11":	#1c1c1c,
+  "Grey15":	#262626,
+  "Grey19":	#303030,
+  "Grey23":	#3a3a3a,
+  "Grey27":	#444444,
+  "Grey30":	#4e4e4e,
+  "Grey35":	#585858,
+  "Grey39":	#626262,
+  "Grey42":	#6c6c6c,
+  "Grey46":	#767676,
+  "Grey50":	#808080,
+  "Grey54":	#8a8a8a,
+  "Grey58":	#949494,
+  "Grey62":	#9e9e9e,
+  "Grey66":	#a8a8a8,
+  "Grey70":	#b2b2b2,
+  "Grey74":	#bcbcbc,
+  "Grey78":	#c6c6c6,
+  "Grey82":	#d0d0d0,
+  "Grey85":	#dadada,
+  "Grey89":	#e4e4e4,
+  "Grey93":	#eeeeee
+);
+
+// Social colors
+//
+$social-colors: (
+  'facebook': #3b5998,
+  'twitter': #1da1f2,
+  'youtube': #ef450f,
+  'telegram': #2ca5e0,
+  'whatsapp': #25d366
+);
+
+// Alert colrs
+
+$alert-colors: (
+  'danger': #cc3300,
+  'warning': #ffcc00,
+  'succes': #339900,
+  'info' : #0000FF
+);
+
+// Breakpoints
+//
+$breakpoints: (
+  xs: 375px,
+  sm: 600px,
+  md: 740px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+// Spacing
+//
+$spacing: (
+  '0': 0,
+  'size1x': $size1x,
+  'size2x': $size2x,
+  'size3x': $size3x,
+  'size4x': $size4x,
+  'size6x': $size6x,
+  'size9x': $size9x,
+  'size12x': $size12x
+);
+
+// Typography
+//
+$typography: (
+  'primer': (
+    base: $type-primer,
+    'line-height': (
+      base: .75rem
+    )
+  ),
+  'pica': (
+    base: $type-pica,
+    'line-height': (
+      base: 1rem
+    )
+  ),
+  'english': (
+    base: $type-english,
+    small: $type-english-small,
+    xsmall: $type-english-xsmall,
+    'line-height': (
+      base: 1.5rem,
+      small: 1.25rem,
+      xsmall: 1rem
+    )
+  ),
+  'columbian': (
+    base: $type-columbian,
+    'line-height': (
+      base: 1.25rem
+    )
+  ),
+  'greatprimer': (
+    base: $type-greatprimer,
+    'line-height': (
+      base: 1.375rem
+    )
+  ),
+  'paragon': (
+    base: $type-paragon,
+    'line-height': (
+      base: 1.5rem
+    )
+  ),
+  'doublepica': (
+    base: $type-doublepica,
+    small: $type-doublepica-small,
+    xsmall: $type-doublepica-small,
+    'line-height': (
+      base: 1.75rem,
+      small: 1.25rem,
+      xsmall: 1rem
+    )
+  ),
+  'doublecolumbian': (
+    base: $type-doublecolumbian,
+    small: $type-doublecolumbian-small,
+    xsmall: $type-doublecolumbian-xsmall,
+    'line-height': (
+      base: 2.75rem,
+      small: 1.75rem,
+      xsmall: 1.5rem
+    )
+  ),
+  'canon': (
+    base: $type-canon,
+    medium: $type-canon-medium,
+    small: $type-canon-small,
+    'line-height': (
+      base: 3.25rem,
+      medium: 2.25rem,
+      small: 1.75rem
+    )
+  )
+);
+
+// Z-Layers
+// toggle and menu are directly influenced by adv skin z-index
+$z-index: (
+  default: 1,
+  overlay: 10,
+  toggle-1: 99998,
+  menu: 100000,
+  toggle-2: 100001,
+  modal: 100010
+);
+
+
+// Lists of measures
+//
+$measure:(
+  "none",
+  "eighth",
+  "quarter",
+  "half",
+  "base",
+  "and-half",
+  "double",
+  "quad"
+);

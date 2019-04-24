@@ -1,0 +1,146 @@
+// scss-lint:disable SpaceAfterVariableName
+// $VARIABLES ---------------------------------------------------------------//
+
+// COLORS ======================================================================
+
+// Base colors -------------------------------------------------------------- //
+$color-black: #151010;
+$color-steelblue: #2e6d9d;
+$color-white: #fff;
+
+// Gray --------------------------------------------------------------------- //
+$color-gray-10: #fafafa;
+$color-gray-20: #f5f5f5;
+$color-gray-30: #eee;
+$color-gray-40: #e0e0e0;
+$color-gray-50: #bdbdbd;
+$color-gray-60: #9e9e9e;
+$color-gray-70: #757575;
+$color-gray-80: #616161;
+$color-gray-90: #424242;
+$color-gray-100: #212121;
+
+// Slategray -----------------------------------------------------------------//
+$color-slategray-10: #eceff1;
+$color-slategray-20: #cfd8dc;
+$color-slategray-30: #b0bec5;
+$color-slategray-40: #90a4ae;
+$color-slategray-50: #78909c;
+$color-slategray-60: #607d8b;
+$color-slategray-70: #546e7a;
+$color-slategray-80: #455a64;
+$color-slategray-90: #37474f;
+$color-slategray-100: #263238;
+
+// Accent Colors -------------------------------------------------------------//
+$color-accent-magenta: #e91f63;
+$color-accent-mint: #00bfa5;
+$color-accent-orange: #ffa000;
+$color-accent-gold: #edce8e;
+$color-accent-firebrick: #ff3030;
+
+// Social colors -------------------------------------------------------------//
+$color-facebook: #3b5998;
+$color-twitter: #1da1f2;
+$color-youtube: #ef450f;
+$color-telegram: #2ca5e0;
+$color-whatsapp: #25d366;
+
+
+// TYPOGRAPHY ==================================================================
+
+// Line height
+$lineheight-base: 1.25;
+$lineheight-extra: 1.5;
+$lineheight-body: 1.8125rem; // 29px - use along with 'greatprimer' type size
+
+// Type Sizes
+$type-canon: 3rem; // 48px
+$type-canon-medium: 2rem; // 32px
+$type-canon-small: 1.5rem; // 24px
+
+$type-doublecolumbian: 2rem; // 32px
+$type-doublecolumbian-small: 1.5rem; // 24px
+$type-doublecolumbian-xsmall: 1.25rem; // 20px
+
+$type-doublepica: 1.5rem;// 24px
+$type-doublepica-small: 1rem;// 16px
+$type-doublepica-small: .875rem;// 14px
+
+$type-english: 1.15rem; // 18px
+$type-english-small: .875rem; // 14px
+$type-english-xsmall: .75rem; // 12px
+
+$type-paragon: 1.25rem; // 20px
+$type-greatprimer: 1.15rem; // 18px
+$type-columbian: 1rem; // 16px
+$type-pica: .75rem; // 12px
+$type-primer: .625rem; // 10px
+
+// Font Weight
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Font Family
+$font-serif-stack: Georgia, "Times New normal", serif;
+$font-sans-stack: Helvetica, Arial, sans-serif;
+
+$font-serif: 'PublicoText', $font-serif-stack;
+$font-serif-display: 'Publico', $font-serif-stack;
+$font-sans-display: 'NeueHaasGroteskDisp Pro', $font-sans-stack;
+$font-sans: 'NeueHaasGroteskText Pro', $font-sans-stack;
+$font-sans-narrow: 'NovecentoNarrow', $font-sans-stack;
+
+// MEASURES ====================================================================
+$baseline: .5rem; // 8px
+
+$space: 1rem;
+$gutterwidth    : $space;
+$baselineheight : 1.5rem;
+
+// Sizes -------------------------------------------------------------------- //
+$size1x: $baseline; // 8px
+$size2x: $size1x * 2; // 16px
+$size3x: $size1x * 3; // 24px
+$size4x: $size1x * 4; // 32px
+$size6x: $size1x * 6; // 48px
+$size8x: $size1x * 8; // 64px
+$size9x: $size1x * 9; // 72px
+$size12x: $size1x * 12; // 96px
+
+$size-fluid: 100%;
+
+
+// Grid ----------------------------------------------------------------------//
+$gutter: $size2x;
+$gutter-large: $size3x;
+
+// Use $space to set vertical space between elements
+$space: $gutter;
+$space-large: $gutter-large;
+$space-small: $gutter / 2;
+$space-xlarge: $gutter * 3;
+
+// Icons ----------------------------------------------------------------------//
+$icon-small: $size2x;
+$icon-base: $size3x;
+$icon-large: $size4x;
+
+
+// SHAPES ======================================================================
+
+$border-style: solid;
+$border-size-base: 1px;
+$border-size-medium: 2px;
+$border-size-large: 4px;
+$border-size-xlarge: 6px;
+
+$radius: 3px;
+$radius-rounded: 50%;
+
+// ANIMATIONS ==================================================================
+
+$default-timing: .3s;
+$transition-function: ease;
