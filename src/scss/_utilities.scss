@@ -61,12 +61,12 @@
 //[WIP]
 // Font style Classes ------------------------------------------------------- //
 
-.u-fs--italic {
+.u-f--italic {
   font-style: italic;
 }
 
-.u-fs--bold {
-  font-style: bold;
+.u-f--bold {
+  font-weight: bold;
 }
 
 
@@ -162,10 +162,6 @@
     flex-direction: column;
   }
 
-  &--jc-center {
-    justify-content: center;
-  }
-
   &--as-center {
     align-self: center;
   }
@@ -246,60 +242,73 @@
 
 // General colors ---------------------------------------------------------- //
 
-@each $color in $colors {
+@each $color, $hex in $colors {
   
-  .u-bg-#{$color}{
-    background-color: $color;
+  .u-bg--#{$color}{
+    background-color: $hex;
   }
-  .u-color-#{$color}{
-    color: $color;
+  .u-color--#{$color}{
+    color: $hex;
   }
-  .u-border-#{$color}{
-    border-color: $color;
+  .u-border--#{$color}{
+    border-color: $hex;
   }
 }
 
 // Grey scale colors ------------------------------------------------------- //
 
-@each $color in $grey-scale {
+@each $color, $hex in $grey-scale {
   
-  .u-bg-#{$color}{
-    background-color: $color;
+  .u-bg--#{$color}{
+    background-color: $hex;
   }
-  .u-color-#{$color}{
-    color: $color;
+  .u-color--#{$color}{
+    color: $hex;
   }
-  .u-border-#{$color}{
-    border-color: $color;
+  .u-border--#{$color}{
+    border-color: $hex;
   }
 }
 
 // Social colors ----------------------------------------------------------- //
 
-@each $color in $social-colors {
+@each $color, $hex in $social-colors {
   
-  .u-bg-#{$color}{
-    background-color: $color;
+  .u-bg--#{$color}{
+    background-color: $hex;
   }
-  .u-color-#{$color}{
-    color: $color;
+  .u-color--#{$color}{
+    color: $hex;
   }
-  .u-border-#{$color}{
-    border-color: $color;
+  .u-border--#{$color}{
+    border-color: $hex;
   }
 }
 
 // Alert colors ----------------------------------------------------------- //
 
-@each $color in $alert-colors {
+@each $color, $hex in $alert-colors {
   
-  .u-bg-#{$color}{
-    background-color: $color;
+  .u-bg--#{$color}{
+    background-color: $hex;
   }
-  .u-color-#{$color}{
-    color: $color;
+  .u-color--#{$color}{
+    color: $hex;
   }
-  .u-border-#{$color}{
-    border-color: $color;
+  .u-border--#{$color}{
+    border-color: $hex;
   }
+}
+
+// Div utilities
+@each $height in $heights {
+  .u-height--#{$height} {
+    min-height: $height;
+  }  
+}
+ 
+@each $width in $widths {
+  .u-width--#{$width} {
+    min-width: $width;
+  }  
 }

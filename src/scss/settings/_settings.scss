@@ -94,11 +94,10 @@ $font-sans: 'NeueHaasGroteskText Pro', $font-sans-stack;
 $font-sans-narrow: 'NovecentoNarrow', $font-sans-stack;
 
 // MEASURES ====================================================================
-$baseline: .5rem; // 8px
-
+$baseline: .5rem;
 $space: 1rem;
-$gutterwidth    : $space;
 $baselineheight : 1.5rem;
+$gutterwidth    : 2rem;
 
 // Sizes -------------------------------------------------------------------- //
 $size1x: $baseline; // 8px
