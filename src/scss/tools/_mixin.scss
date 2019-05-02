@@ -1,68 +1,134 @@
 // scss-lint:disable PropertySortOrder VendorPrefix
 // $MIXINS ------------------------------------------------------------------ //
-@import 'maps';
+@import "maps";
+
+// Animation ---------------------------------------------------------------- //
+//
+@mixin animation($name, $duration, $timing, $delay, $iteration, $direction) {
+  animation-delay: $delay;
+  animation-direction: $direction;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+
+  animation-name: $name;
+  animation-timing-function: $timing;
+}
+
+// Background image --------------------------------------------------------- //
+//
+@mixin bgimg($position, $repeat, $size) {
+  background-position: $position;
+  background-repeat: $repeat;
+  background-size: $size;
+}
+
+// Border ----------------------------------------------------------------- -- //
+//
+@mixin border($size, $style, $color) {
+  border-bottom-color: $color;
+  border-style: $style;
+  border-width: $size;
+}
+
+@mixin border-top-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-rounded($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin u-border($direction, $size, $style, $color) {
+  .u-border-#{$direction} {
+    border-#{$direction}: $size $style $color;
+  }
+}
+
+// Box shadow --------------------------------------------------------------- //
+//
+@mixin box-shadow($shadow) {
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+// Box sizing --------------------------------------------------------------- //
+//
+@mixin border-box($boxsizing: border-box) {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 // Clearfix ------------------------------------------------------------------//
 //
 @mixin clearfix {
   &:after {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
   }
 }
 
-// Gradient ------------------------------------------------------------------//
+// Columns Grid --------------------------------------------------------------//
 //
-@mixin gradient {
-  background-image: linear-gradient(-180deg, rgba(33,33,33,0.00) 0%, rgba(33,33,33,0.67) 30%, $color-black 100%);
-}
-
-// Media queries -------------------------------------------------------------//
-
-// Breakpoint media query
-// @mixin bp($breakpoint) {
-//   @media (min-width: map-get($breakpoints, $breakpoint)) {
-//     @content
-//   }
-// };
-
-@mixin bp($bp, $rule: min-width) {
-  @media screen and (#{$rule}: map-get($breakpoints, $bp)) {
-      @content;
-  }
-}
-
-
-// Landscape orientation media query
-@mixin orientation($orientation) {
-  @if $orientation == landscape {
-    @media only screen and (orientation: landscape) {
-      @content
-    }
-  } @else {
-      @media only screen and (orientation: portrait) {
-        @content
+@mixin grid($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @for $col from 1 through 12 {
+      .o-cell-#{$col}\@#{$breakpoint} {
+        width: 8.333333% * $col;
       }
+    }
   }
-};
+}
 
 // Flexbox SASS mixins--------------------------------------------------------//
 // The spec: http://www.w3.org/TR/css3-flexbox
+@mixin flexbox($direction: row, $wrap: nowrap, $justify: flex-start, $align: flex-start) {
+  -webkit-flex-direction: $direction;
+
+  -webkit-flex-wrap: $wrap;
+  -webkit-justify-content: $justify;
+  -webkit-justify-content: $align;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+
+  justify-content: $justify;
+
+  justify-content: $align;
+}
 
 // Flexbox display
-@mixin flexbox() {
+//
+@mixin flex-display() {
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
 // The 'flex' shorthand
 // - applies to: flex items
 // <positive-number>, initial, auto, or none
-@mixin flex($values) {
+@mixin flex-values($values) {
   -webkit-flex: $values;
-  -ms-flex: $values;
   flex: $values;
 }
 
@@ -71,7 +137,6 @@
 // row | row-reverse | column | column-reverse
 @mixin flex-direction($direction) {
   -webkit-flex-direction: $direction;
-  -ms-flex-direction: $direction;
   flex-direction: $direction;
 }
 
@@ -80,7 +145,6 @@
 // nowrap | wrap | wrap-reverse
 @mixin flex-wrap($wrap) {
   -webkit-flex-wrap: $wrap;
-  -ms-flex-wrap: $wrap;
   flex-wrap: $wrap;
 }
 
@@ -89,16 +153,14 @@
 // <flex-direction> || <flex-wrap>
 @mixin flex-flow($flow) {
   -webkit-flex-flow: $flow;
-  -ms-flex-flow: $flow;
   flex-flow: $flow;
 }
 
 // Display Order
 // - applies to: flex items
 // <integer>
-@mixin order($val) {
+@mixin flex-order($val) {
   -webkit-flex-order: $val;
-  -ms-flex-order: $val;
   order: $val;
 }
 
@@ -107,7 +169,6 @@
 // <number>
 @mixin flex-grow($grow) {
   -webkit-flex-grow: $grow;
-  -ms-flex-positive: $grow;
   flex-grow: $grow;
 }
 
@@ -116,7 +177,6 @@
 // <number>
 @mixin flex-shrink($shrink) {
   -webkit-flex-grow: $shrink;
-  -ms-flex-negative: $shrink;
   flex-shrink: $shrink;
 }
 
@@ -126,14 +186,13 @@
 // <width>
 @mixin flex-basis($width) {
   -webkit-flex-basis: $width;
-  -ms-flex-preferred-size: $width;
   flex-basis: $width;
 }
 
 // Axis Alignment
 // - applies to: flex containers
 // flex-start | flex-end | center | space-between | space-around
-@mixin justify-content($justify) {
+@mixin flex-justify-content($justify) {
   -webkit-justify-content: $justify;
   justify-content: $justify;
 }
@@ -141,40 +200,118 @@
 // Packing Flex Lines
 // - applies to: multi-line flex containers
 // flex-start | flex-end | center | space-between | space-around | stretch
-@mixin align-content($align) {
+@mixin flex-align-content($align) {
   -webkit-justify-content: $align;
-  -ms-flex-pack: $align;
   justify-content: $align;
 }
 
 // Cross-axis Alignment
 // - applies to: flex containers
 // flex-start | flex-end | center | baseline | stretch
-@mixin align-items($align) {
+@mixin flex-align-items($align) {
   -webkit-align-items: $align;
-  -ms-align-items: $align;
   align-items: $align;
 }
 
 // Cross-axis Alignment
 // - applies to: flex items
 // auto | flex-start | flex-end | center | baseline | stretch
-@mixin align-self($align) {
+@mixin flex-align-self($align) {
   -webkit-align-self: $align;
-  -ms-flex-item-align: $align;
   align-self: $align;
 }
 
-// Layer Element -------------------------------------------------------------//
+// Gradient ------------------------------------------------------------------//
 //
-@mixin layer($position: relative, $width: 100%, $height:100%, $display: block) {
-  display: $display;
+@mixin gradient($color-one, $color-two, $color-three) {
+  background-image: linear-gradient(-180deg, $color-one 0%, $color-two 30%, $color-three 100%);
+}
+
+// Margin and Padding mixin for creating custom utility classes
+//
+@mixin custom-utility($utility, $direction, $size) {
+  .u-#{$utility}-#{$direction} {
+    #{$utility}-#{$direction}: $size;
+  }
+}
+
+// Media queries and oritantion ----------------------------------------------//
+//
+@mixin bp($orientation, $bp, $rule: min-width) {
+  @media screen and (#{$rule}: map-get($breakpoints, $bp)) {
+    @if $orientation==landscape {
+      @media only screen and (orientation: landscape) {
+        @content;
+      }
+    } @else {
+      @media only screen and (orientation: portrait) {
+        @content;
+      }
+    }
+  }
+}
+
+// Position ----------------------------------------------------------------- //
+//
+@mixin position-a-tr($position: absolute, $top: 0, $right: 0) {
   position: $position;
-  top: 0;
-  left: 0;
-  width: $width;
+  right: $right;
+  top: $top;
+}
+
+@mixin position-a-tl($position: absolute, $top: 0, $left: 0) {
+  left: $left;
+  position: $position;
+  top: $top;
+}
+
+@mixin position-a-br($position: absolute, $bottom: 0, $right: 0) {
+  bottom: $bottom;
+  position: $position;
+  right: $right;
+}
+
+@mixin position-a-bl($position: absolute, $bottom: 0, $left: 0) {
+  bottom: $bottom;
+  left: $left;
+  position: $position;
+}
+
+@mixin position-f-tl($position: fixed, $top: 0, $left: 0) {
+  left: $left;
+  position: $position;
+  top: $top;
+}
+
+@mixin position-f-tr($position: fixed, $top: 0, $right: 0) {
+  position: $position;
+  right: $right;
+  top: $top;
+}
+
+@mixin position-f-br($position: fixed, $bottom: 0, $right: 0) {
+  bottom: $bottom;
+  position: $position;
+  right: $right;
+}
+
+@mixin position-f-bl($position: fixed, $bottom: 0, $left: 0) {
+  bottom: $bottom;
+  left: $left;
+  position: $position;
+}
+
+// Pseudo Element ------------------------------------------------------------//
+//
+@mixin pseudo($top: 0, $left: 0, $bottom: auto, $right: auto, $width: 100%, $height: 100%) {
+  bottom: $bottom;
+  content: "";
   height: $height;
-  content: '';
+  left: $left;
+  position: absolute;
+  right: $right;
+  top: $top;
+  width: $width;
 }
 
 // Transform -----------------------------------------------------------------//
@@ -186,192 +323,18 @@
 
 // Transition ----------------------------------------------------------------//
 //
-@mixin transition($transition...) {
-  // A shorthand property for setting the four transition properties into a single property
-  transition:         $transition;
+@mixin transition($transition) {
   -webkit-transition: $transition;
-
-  /*
-  Specifies a delay (in seconds) for the transition effect
-  transition-delay:   $transition-delay;
-  */ 
-  
-  /*
-  Specifies how many seconds or milliseconds a transition effect takes to complete
-  transition-duration:$transition-duration;
-  */
-  
-  /*
-  Specifies the name of the CSS property the transition effect is for
-  transition-property: $transition-property;
-  */ 
-  
-  /*
-  Specifies the speed curve of the transition effect
-  transition-timing-function:$transition-timing-function;	
-  */
+  // A shorthand property for setting the four transition properties into a single property
+  transition: $transition;
 }
 
-// Animation ------------------------------------------------------------------ //
-
-@mixin animation($animation...) {
-  
-  animation-name: $name;
-  animation-duration: $duration;
-
-  /* 
-  animation-timing-function: $timing;
-  
-  ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)
-  linear - Specifies an animation with the same speed from start to end
-  ease-in - Specifies an animation with a slow start
-  ease-out - Specifies an animation with a slow end
-  ease-in-out - Specifies an animation with a slow start and end
-  cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function 
-  */
-  
-  // animation-delay: $delay;
-  
-  // animation-iteration-count: $iteration;
-
-  /*
-  animation-direction: $direction;
-  
-  normal - The animation is played as normal (forwards). This is default
-  reverse - The animation is played in reverse direction (backwards)
-  alternate - The animation is played forwards first, then backwards
-  alternate-reverse - The animation is played backwards first, then forwards
-  */
-}
-
-// Z-index -------------------------------------------------------------------- //
+// Z-index ------------------------------------------------------------------ //
 //
-@mixin z($key){
+@mixin z($key) {
   @if map-has-key($z-index, $key) {
     z-index: map-get($z-index, $key);
-  }
-  @else {
+  } @else {
     z-index: $key;
   }
-}
-
-
-// Backface visibility property --------------------------------------------- //
-
-@mixin backface-visibility($visibility) {
-  @include prefixer(backface-visibility, $visibility, webkit spec);
-}
-
-// Borders settings  -------------------------------------------------------- //
-
-@mixin border-box($boxsizing: border-box) {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@mixin border-top-radius($radii) {
-  border-top-left-radius: $radii;
-  border-top-right-radius: $radii;
-}
-
-@mixin border-right-radius($radii) {
-  border-bottom-right-radius: $radii;
-  border-top-right-radius: $radii;
-}
-
-@mixin border-bottom-radius($radii) {
-  border-bottom-left-radius: $radii;
-  border-bottom-right-radius: $radii;
-}
-
-@mixin border-left-radius($radii) {
-  border-bottom-left-radius: $radii;
-  border-top-left-radius: $radii;
-}
-
-@mixin rounded($radius) {
-  -webkit-border-radius : $radius;
-  -moz-border-radius : $radius;
-  border-radius : $radius;
-}
-
-// Box shadow --------------------------------------------------------------- //
-
-@mixin box-shadow($shadow) {
-  -webkit-box-shadow : $shadow;
-  -moz-box-shadow : $shadow;
-  box-shadow : $shadow;
-}
-
-// User-select -------------------------------------------------------------- //
-
-@mixin user-select($value: none) {
-  @include prefixer(user-select, $value, webkit moz ms spec);
-}
-
-// Prefixer ----------------------------------------------------------------- //
-
-$prefix-for-webkit:    true !default;
-$prefix-for-mozilla:   true !default;
-$prefix-for-microsoft: true !default;
-$prefix-for-opera:     true !default;
-$prefix-for-spec:      true !default;
-
-@mixin prefixer($property, $value, $prefixes) {
-  @each $prefix in $prefixes {
-    @if $prefix == webkit {
-      @if $prefix-for-webkit {
-        -webkit-#{$property}: $value;
-      }
-    } @else if $prefix == moz {
-      @if $prefix-for-mozilla {
-        -moz-#{$property}: $value;
-      }
-    } @else if $prefix == ms {
-      @if $prefix-for-microsoft {
-        -ms-#{$property}: $value;
-      }
-    } @else if $prefix == o {
-      @if $prefix-for-opera {
-        -o-#{$property}: $value;
-      }
-    } @else if $prefix == spec {
-      @if $prefix-for-spec {
-        #{$property}: $value;
-      }
-    } @else  {
-      @warn "Unrecognized prefix: #{$prefix}";
-    }
-  }
-}
-
-// Appearance property ------------------------------------------------------ //
-
-@mixin appearance($value) {
-  @include prefixer(appearance, $value, webkit moz ms o spec);
-}
-
-// Background image --------------------------------------------------------- //
-
-@mixin  bgimg($position,$repeat,$size) {
-  background-position: $position;
-  background-repeat: $repeat;
-  background-size: $size;
-}
-
-// Border -------------------------------------------------------------------- //
-
-@mixin border($width,$style) {
-  border-style: $style;
-  border-width: $widh;
-}
-
-// Position ----------------------------------------------------------------- //
-
-@mixin position ($position, $top, $right, $left, $bottom) {
-  position: $position;
-  top:$top;
-  right:$right;
-  left: $left;
-  bottom:$bottom;
 }

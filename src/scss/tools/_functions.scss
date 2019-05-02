@@ -1,41 +1,6 @@
 // $FUNCTIONS  ---------------------------------------------------------------//
 //
-@function type($name, $size) {
-  @return map-get(map-get($typography, $name), $size);
-}
-
-@function line($name, $value) {
-  @return map-get(map-get(map-get($typography, $name), line-height), $value);
-}
 
 @function z-index($key) {
   @return map-get($z-index, $key);
-}
-
-@function calc-measure($measure) {
-
-  @if $measure == none {
-    @return $space*0;
-  }
-  @else if $measure == eighth {
-    @return $space/8;
-  }
-  @else if $measure == quarter {
-    @return $space/4;
-  }
-  @else if $measure == half {
-    @return $space/2;
-  }
-  @else if $measure == base {
-    @return $space;
-  }
-  @else if $measure == and-half {
-    @return $space*1.5;
-  }
-  @else if $measure == double {
-    @return $space*2;
-  }
-  @else if $measure == quad {
-    @return $space*4;
-  }
 }

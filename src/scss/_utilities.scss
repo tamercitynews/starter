@@ -2,137 +2,45 @@
 
 // Margin and Padding Classes ----------------------------------------------- //
 
-@each $value in $measure {
-  .u-m--#{$value} {
-    margin: calc-measure($value);
+@each $orientation in $orientations {
+  .u-m-#{$orientation} {
+    @each $size in $sizes {
+      margin-#{$orientation}: $size;
+    }
   }
 
-  .u-mt--#{$value} {
-    margin-top: calc-measure($value);
-  }
-
-  .u-mr--#{$value} {
-    margin-right: calc-measure($value);
-  }
-
-  .u-mb--#{$value} {
-    margin-bottom: calc-measure($value);
-  }
-
-  .u-ml--#{$value} {
-    margin-left: calc-measure($value);
-  }
-
-  .u-p--#{$value} {
-    padding: calc-measure($value);
-  }
-
-  .u-pt--#{$value} {
-    padding-top: calc-measure($value);
-  }
-
-  .u-pr--#{$value} {
-    padding-right: calc-measure($value);
-  }
-
-  .u-pb--#{$value} {
-    padding-bottom: calc-measure($value);
-  }
-
-  .u-pl--#{$value} {
-    padding-left: calc-measure($value);
+  .u-p-#{$orientation} {
+    @each $size in $sizes {
+      padding-#{$orientation}: $size;
+    }
   }
 }
 
 // Text align Classes ------------------------------------------------------- //
-
-.u-align--center {
+//
+.u-text-center {
   text-align: center;
 }
 
-.u-align--left {
+.u-text-left {
   text-align: left;
 }
 
-.u-align--right {
+.u-text-right {
   text-align: right;
 }
 
-//[WIP]
 // Font style Classes ------------------------------------------------------- //
-
-.u-f--italic {
+//
+.u-italic {
   font-style: italic;
 }
 
-.u-f--bold {
+.u-bold {
   font-weight: bold;
 }
 
-
-//[WIP]
 // Float Classes ------------------------------------------------------------ //
-
-.u-float--left {
-  float: left;
-}
-
-.u-float--right {
-  float: right;
-}
-
-//[WIP]
-// Border width and style Classes ------------------------------------------- //
-
-.u-bd {
-  border: 1px solid;
-}
-
-.u-bd--top {
-  border-top: 1px solid;
-}
-
-.u-bd--right {
-  border-right: 1px solid;
-}
-
-.u-bd--bottom {
-  border-bottom: 1px solid;
-}
-
-.u-bd--left {
-  border-left: 1px solid;
-}
-
-.u-pointer{
-  cursor: pointer;
-}
-
-.u-shadow{
-  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
-}
-
-
-// Text align
-//
-.u-align-center {
-  text-align: center;
-}
-
-.u-align-right {
-  text-align: right;
-}
-
-.u-align-left {
-  text-align: left;
-}
-
-.u-align-start {
-  align-self: start
-}
-
-// Float align
 //
 .u-float-left {
   float: left;
@@ -142,60 +50,124 @@
   float: right;
 }
 
-// Border none
+// Border width and style Classes ------------------------------------------- //
 //
+.u-border {
+  border: 1px solid;
+}
+
+@each $orientation in $orientations {
+  .u-border-#{$orientation} {
+    border-#{$orientation}: 1px solid;
+  }
+}
+
 .u-border-none {
   border: 0 none;
+}
+
+.u-pointer {
+  cursor: pointer;
+}
+
+.u-shadow {
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 // Flexbox
 //
 
-.u-fb {
+.u-flexbox {
   display: flex;
 
-  &--dir-row {
+  // directions
+  &-row {
     flex-direction: row;
   }
 
-  &--dir-column {
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-column {
     flex-direction: column;
   }
 
-  &--as-center {
-    align-self: center;
+  &-columm-reverse {
+    flex-direction: column-reverse;
   }
 
-  &--jc-between {
-    justify-content:space-between;
+  // justify
+  &-justify-center {
+    justify-content: center;
   }
 
-  &--jc-center {
-    justify-content:center;
+  &-justify-start {
+    justify-content: flex-start;
   }
 
-  &--wrap {
-    flex-wrap:wrap;
+  &-justify-end {
+    justify-content: flex-end;
   }
 
-  &--n-wrap {
-    flex-wrap:nowrap;
+  &-justify-between {
+    justify-content: space-between;
   }
 
-  &--dir-reverse {
-    flex-direction:row-reverse;
+  &-justify-around {
+    justify-content: space-around;
   }
 
-  &--start {
-    justify-content:flex-start;
+  // align contemt
+  &-content-center {
+    align-content: center;
   }
 
-  &--jc-end {
-    justify-content:flex-end;
+  &-content-start {
+    align-content: flex-start;
   }
 
-  &--ai-center {
-    align-items:center;
+  &-content-end {
+    align-content: flex-end;
+  }
+
+  &-content-between {
+    align-content: flex-between;
+  }
+
+  &-content-around {
+    align-content: flex-around;
+  }
+
+  // wrap
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  // align items
+  &-items-center {
+    align-items: center;
+  }
+
+  &-items-start {
+    align-items: flex-start;
+  }
+
+  &-items-end {
+    align-items: flex-end;
+  }
+
+  &-items-stretch {
+    align-items: flex-stretch;
+  }
+
+  &-items-baseline {
+    align-items: flex-baseline;
   }
 }
 
@@ -213,8 +185,8 @@
 }
 
 .u-expand {
-  margin-left: -$gutter;
-  margin-right: -$gutter;
+  margin-right: -1rem;
+  margin-left: -1rem;
 }
 
 // Image ---------------------------------------------------------------------//
@@ -229,13 +201,15 @@
 }
 
 .u-overflow {
-  &--hidden {
+  &-hidden {
     overflow: hidden;
   }
-  &--auto {
+
+  &-auto {
     overflow: auto;
   }
-  &--scroll {
+
+  &-scroll {
     overflow: scroll;
   }
 }
@@ -243,72 +217,11 @@
 // General colors ---------------------------------------------------------- //
 
 @each $color, $hex in $colors {
-  
-  .u-bg--#{$color}{
+  .u-bg-#{$color} {
     background-color: $hex;
   }
-  .u-color--#{$color}{
+
+  .u-color-#{$color} {
     color: $hex;
   }
-  .u-border--#{$color}{
-    border-color: $hex;
-  }
-}
-
-// Grey scale colors ------------------------------------------------------- //
-
-@each $color, $hex in $grey-scale {
-  
-  .u-bg--#{$color}{
-    background-color: $hex;
-  }
-  .u-color--#{$color}{
-    color: $hex;
-  }
-  .u-border--#{$color}{
-    border-color: $hex;
-  }
-}
-
-// Social colors ----------------------------------------------------------- //
-
-@each $color, $hex in $social-colors {
-  
-  .u-bg--#{$color}{
-    background-color: $hex;
-  }
-  .u-color--#{$color}{
-    color: $hex;
-  }
-  .u-border--#{$color}{
-    border-color: $hex;
-  }
-}
-
-// Alert colors ----------------------------------------------------------- //
-
-@each $color, $hex in $alert-colors {
-  
-  .u-bg--#{$color}{
-    background-color: $hex;
-  }
-  .u-color--#{$color}{
-    color: $hex;
-  }
-  .u-border--#{$color}{
-    border-color: $hex;
-  }
-}
-
-// Div utilities
-@each $height in $heights {
-  .u-height--#{$height} {
-    min-height: $height;
-  }  
-}
- 
-@each $width in $widths {
-  .u-width--#{$width} {
-    min-width: $width;
-  }  
 }

@@ -1,7 +1,18 @@
 // scss-lint:disable propertysortorder vendorprefix
 // $maps -------------------------------------------------------------------- //
 
-// theme colors name
+// breakpoints
+//
+$breakpoints: (
+  'xs': 375px,
+  'sm': 600px,
+  'md': 740px,
+  'lg': 1024px,
+  'xl': 1200px,
+  'xxl': 1440px
+);
+
+// Colors
 //
 $colors : (
   'white':	#ffffff,
@@ -18,152 +29,54 @@ $colors : (
   'blue':	#0000ff,
   'navy':	#000080,
   'fuchsia':	#ff00ff,
-  'purple':	#800080
-);
-
-$grey-scale :(
-  "grey3":	#080808,
-  "grey7":	#121212,
-  "grey11":	#1c1c1c,
-  "grey15":	#262626,
-  "grey19":	#303030,
-  "grey23":	#3a3a3a,
-  "grey27":	#444444,
+  'purple':	#800080,
+  
+  //grey-scale
+  "grey10":	#1c1c1c,
+  "grey20":	#303030,
   "grey30":	#4e4e4e,
-  "grey35":	#585858,
-  "grey39":	#626262,
-  "grey42":	#6c6c6c,
-  "grey46":	#767676,
+  "grey40":	#626262,
   "grey50":	#808080,
-  "grey54":	#8a8a8a,
-  "grey58":	#949494,
-  "grey62":	#9e9e9e,
-  "grey66":	#a8a8a8,
+  "grey60":	#9e9e9e,
   "grey70":	#b2b2b2,
-  "grey74":	#bcbcbc,
-  "grey78":	#c6c6c6,
-  "grey82":	#d0d0d0,
-  "grey85":	#dadada,
-  "grey89":	#e4e4e4,
-  "grey93":	#eeeeee
-);
-
-// social colors
-//
-$social-colors: (
+  "grey80":	#d0d0d0,
+  "grey90":	#eeeeee,
+  
+  // social colors
   'facebook': #3b5998,
   'twitter': #1da1f2,
   'youtube': #ef450f,
   'telegram': #2ca5e0,
-  'whatsapp': #25d366
-);
-
-// alert colrs
-
-$alert-colors: (
+  'whatsapp': #25d366,
+  
+  // alert colrs
   'danger': #cc3300,
   'warning': #ffcc00,
   'succes': #339900,
   'info' : #0000ff
 );
 
-// breakpoints
+// Orientations
 //
-$breakpoints: (
-  xs: 375px,
-  sm: 600px,
-  md: 740px,
-  lg: 1024px,
-  xl: 1200px,
-  xxl: 1440px
+$orientations:(
+  'top',
+  'left',
+  'bottom',
+  'right'
 );
 
-// spacing
+// Sizes
 //
-$spacing: (
-  '0': 0,
-  'size1x': $size1x,
-  'size2x': $size2x,
-  'size3x': $size3x,
-  'size4x': $size4x,
-  'size6x': $size6x,
-  'size9x': $size9x,
-  'size12x': $size12x
-);
-
-// typography
-//
-$typography: (
-  'primer': (
-    base: $type-primer,
-    'line-height': (
-      base: .75rem
-    )
-  ),
-  'pica': (
-    base: $type-pica,
-    'line-height': (
-      base: 1rem
-    )
-  ),
-  'english': (
-    base: $type-english,
-    small: $type-english-small,
-    xsmall: $type-english-xsmall,
-    'line-height': (
-      base: 1.5rem,
-      small: 1.25rem,
-      xsmall: 1rem
-    )
-  ),
-  'columbian': (
-    base: $type-columbian,
-    'line-height': (
-      base: 1.25rem
-    )
-  ),
-  'greatprimer': (
-    base: $type-greatprimer,
-    'line-height': (
-      base: 1.375rem
-    )
-  ),
-  'paragon': (
-    base: $type-paragon,
-    'line-height': (
-      base: 1.5rem
-    )
-  ),
-  'doublepica': (
-    base: $type-doublepica,
-    small: $type-doublepica-small,
-    xsmall: $type-doublepica-small,
-    'line-height': (
-      base: 1.75rem,
-      small: 1.25rem,
-      xsmall: 1rem
-    )
-  ),
-  'doublecolumbian': (
-    base: $type-doublecolumbian,
-    small: $type-doublecolumbian-small,
-    xsmall: $type-doublecolumbian-xsmall,
-    'line-height': (
-      base: 2.75rem,
-      small: 1.75rem,
-      xsmall: 1.5rem
-    )
-  ),
-  'canon': (
-    base: $type-canon,
-    medium: $type-canon-medium,
-    small: $type-canon-small,
-    'line-height': (
-      base: 3.25rem,
-      medium: 2.25rem,
-      small: 1.75rem
-    )
-  )
+$sizes:(
+  "size-0"  : 0,
+  "size-4"  : .25rem,
+  "size-8"  : .5rem,
+  "size-12" : .75rem,
+  "size-16" : 1rem,
+  "size-20" : 1.25rem,
+  "size-24" : 1.5rem,
+  "size-28" : 1.75rem,
+  "size-32" : 2rem
 );
 
 // z-layers
@@ -175,36 +88,4 @@ $z-index: (
   menu: 100000,
   toggle-2: 100001,
   modal: 100010
-);
-
-
-// lists of measures
-//
-$measure:(
-  "none",
-  "eighth",
-  "quarter",
-  "half",
-  "base",
-  "and-half",
-  "double",
-  "quad"
-);
-
-$heights: (
-  25vh,
-  50vh,
-  75vh,
-  100vh,
-  150vh,
-  200vh
-);
-
-$widths: (
-  25vw,
-  50vw,
-  75vw,
-  100vw,
-  150vw,
-  200vw,
 );
