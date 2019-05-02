@@ -34,8 +34,8 @@ gulp.task(
     return gulp.src( css.in )
                .pipe( sass( css.sassOpts ) )
                .pipe( concat( css.bundle ) )
-               .pipe( uglifyCSS() )
-               .pipe( cleanCSS() )
+              //  .pipe( uglifyCSS() )
+              //  .pipe( cleanCSS() )
                .pipe( gulp.dest( css.out ) );
     done();
   }
