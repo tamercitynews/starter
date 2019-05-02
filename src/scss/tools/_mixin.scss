@@ -227,14 +227,6 @@
   background-image: linear-gradient(-180deg, $color-one 0%, $color-two 30%, $color-three 100%);
 }
 
-// Margin and Padding mixin for creating custom utility classes
-//
-@mixin custom-utility($utility, $direction, $size) {
-  .u-#{$utility}-#{$direction} {
-    #{$utility}-#{$direction}: $size;
-  }
-}
-
 // Media queries and oritantion ----------------------------------------------//
 //
 @mixin bp($orientation, $bp, $rule: min-width) {
