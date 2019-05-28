@@ -59,24 +59,24 @@ $colors : (
 // Orientations
 //
 $orientations:(
-  'top',
-  'left',
-  'bottom',
-  'right'
+  't',
+  'l',
+  'b',
+  'r'
 );
 
 // Sizes
 //
 $sizes:(
-  "size-0"  : 0,
-  "size-4"  : .25rem,
-  "size-8"  : .5rem,
-  "size-12" : .75rem,
-  "size-16" : 1rem,
-  "size-20" : 1.25rem,
-  "size-24" : 1.5rem,
-  "size-28" : 1.75rem,
-  "size-32" : 2rem
+  "0"  : 0,
+  "4"  : .25rem,
+  "8"  : .5rem,
+  "12" : .75rem,
+  "16" : 1rem,
+  "20" : 1.25rem,
+  "24" : 1.5rem,
+  "28" : 1.75rem,
+  "32" : 2rem
 );
 
 // z-layers

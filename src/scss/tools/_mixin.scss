@@ -227,9 +227,10 @@
   background-image: linear-gradient(-180deg, $color-one 0%, $color-two 30%, $color-three 100%);
 }
 
-// Media queries and oritantion ----------------------------------------------//
+// Media queries and orientation ----------------------------------------------//
 //
 @mixin bp($bp, $rule: min-width, $orientation:false) {
+
   @if ($orientation) {
     @media screen and (#{$rule}: map-get($breakpoints, $bp)) and (orientation : $orientation) {
       @content;
