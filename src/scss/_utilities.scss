@@ -2,16 +2,16 @@
 
 // Margin and Padding Classes ----------------------------------------------- //
 
-@each $orientation in $orientations {
+@each $key, $val in $orientations {
   @each $size, $value in $sizes {
-    .u-m-#{$orientation}-#{$size} {
-      margin-#{$orientation}: $value;
+    .u-m-#{$key}-#{$size} {
+      margin-#{$val}: $value;
     }
   }
 
   @each $size, $value in $sizes {
-    .u-p-#{$orientation}-#{$size} {
-      padding-#{$orientation}: $value;
+    .u-p-#{$key}-#{$size} {
+      padding-#{$val}: $value;
     }
   }
 }
